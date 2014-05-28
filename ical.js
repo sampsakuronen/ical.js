@@ -216,6 +216,7 @@
       , 'COMPLETED': dateParam('completed')
       , 'CATEGORIES': categoriesParam('categories')
       , 'FREEBUSY': freebusyParam('freebusy')
+      , 'ATTACH': storeParam('attachment')
     },
 
 
