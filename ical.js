@@ -163,9 +163,8 @@
     }
   }
 
+  var i = 0
   return {
-
-
     objectHandlers : {
       'BEGIN' : function(component, params, curr, stack){
           stack.push(curr)
@@ -179,7 +178,7 @@
             //scan all high level object in curr and drop all strings
             var key,
                 obj;
-            
+
             for (key in curr) {
                 if(curr.hasOwnProperty(key)) {
                    obj = curr[key];
@@ -188,16 +187,13 @@
                    }
                 }
             }
-            
+
             return curr
         }
-        
+
         var par = stack.pop()
 
-        if (curr.uid)
-          par[curr.uid] = curr
-        else
-          par[Math.random()*100000] = curr  // Randomly assign ID : TODO - use true GUID
+        par[i++] = curr
 
         return par
       }
